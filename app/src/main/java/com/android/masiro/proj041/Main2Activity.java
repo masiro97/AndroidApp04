@@ -18,28 +18,28 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        setTitle("각종 계산기");
         tab = (TabHost)findViewById(R.id.tabhost);
-
         tab.setup();
 
         TabHost.TabSpec tab1 = tab.newTabSpec("a").setContent(new TabHost.TabContentFactory() {
             @Override
             public View createTabContent(String tag) {
                 View view1 = View.inflate(Main2Activity.this,R.layout.bmi,null);
-
                 Button btn = (Button)view1.findViewById(R.id.button1);
                 final EditText e11 = (EditText)view1.findViewById(R.id.editText1);
                 final EditText e12 = (EditText)view1.findViewById(R.id.editText2);
                 final TextView t4 = (TextView)view1.findViewById(R.id.textView4);
+                final TextView t7 = (TextView)view1.findViewById(R.id.textView7);
 
                 btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String temp = e11.getText().toString();
-                        float height = Float.parseFloat(temp);
-                        temp = e12.getText().toString();
-                        float weight = Float.parseFloat(temp)/100;
+                        float height = Float.parseFloat(e11.getText().toString())/100;
+                        float weight = Float.parseFloat(e12.getText().toString());
                         float bmi = weight / (height * height);
+
+                        t7.setText("BMI 지수: " + bmi);
 
                         if (bmi < 18.5) {
                             t4.setText("체중부족입니다");
@@ -48,11 +48,10 @@ public class Main2Activity extends AppCompatActivity {
                         } else if (bmi >= 23 && bmi < 25) {
                             t4.setText("과체중입니다");
                         } else {
-                            t4.setText("이상입니다");
+                            t4.setText("비만입니다");
                         }
                     }
                 });
-
                 return view1;
             }
         }).setIndicator("BMI 계산기");
@@ -73,7 +72,7 @@ public class Main2Activity extends AppCompatActivity {
                     public void onClick(View v) {
                         float input = Float.parseFloat(e2.getText().toString());
                         double result = input * 3.305785;
-                        t6.setText(result + "미터제곱");
+                        t6.setText(result + " 제곱미터");
                     }
                 });
 
@@ -82,7 +81,7 @@ public class Main2Activity extends AppCompatActivity {
                     public void onClick(View v) {
                         float input = Float.parseFloat(e2.getText().toString());
                         double result = input / 3.305785;
-                        t6.setText(result + "평");
+                        t6.setText(result + " 평");
                     }
                 });
 
@@ -94,22 +93,5 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
-
-
-public void OnButton(View v){
-    switch(v.getId()){
-
-        case R.id.button1:
-
-            break;
-        case R.id.button2:
-            break;
-        case R.id.button3:
-            break;
-    }
-
-}
-
-
 }
 

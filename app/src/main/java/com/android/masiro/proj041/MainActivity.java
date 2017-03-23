@@ -17,11 +17,14 @@ public class MainActivity extends AppCompatActivity {
     TextView t;
     Button back;
     int num =0;
+    int numOftitle =0;
+    int numOfexpand =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("메뉴를 눌러보세요");
         l = (LinearLayout)findViewById(R.id.linear1);
         food = (ImageView)findViewById(R.id.imageView);
         t = (TextView)findViewById(R.id.textView);
@@ -64,11 +67,30 @@ public class MainActivity extends AppCompatActivity {
                 food.setRotation(num *30);
                 break;
             case R.id.expand1:
-                food.setScaleX(2);
-                food.setScaleY(2);
+                    numOfexpand++;
+                    if(numOfexpand%2 ==1){
+                        food.setScaleX(2);
+                        food.setScaleY(2);
+                        item.setChecked(true);
+                    }
+                    else {
+
+                        food.setScaleX(1);
+                        food.setScaleY(1);
+                        item.setChecked(false);
+                    }
                 break;
             case R.id.title1:
-                t.setVisibility(View.VISIBLE);
+                    numOftitle++;
+                    if(numOftitle%2 ==1){
+                        t.setVisibility(View.VISIBLE);
+                        item.setChecked(true);
+                    }
+                    else{
+                        t.setVisibility(View.INVISIBLE);
+                        item.setChecked(false);
+                    }
+
                 break;
             case R.id.spaghetti:
                 food.setImageResource(R.drawable.s);

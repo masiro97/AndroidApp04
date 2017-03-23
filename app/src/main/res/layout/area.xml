@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#fa5858"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:padding="30dp"
+        android:background="#ffffff"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView5"
+            android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="평이나 면적을 입력하세요" />
 
         <EditText
@@ -21,12 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginBottom="20dp"
             android:inputType="textPersonName"
             android:hint="숫자 입력" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -39,22 +48,23 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
                 android:text="계산결과가 없습니다." />
 
         </LinearLayout>
 
         <Button
             android:id="@+id/button2"
-            android:onClick="OnButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="평을 제곱미터로 변환" />
 
         <Button
             android:id="@+id/button3"
-            android:onClick="OnButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="제곱미터를 평으로 변환" />
