@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView food;
     TextView t;
     Button back;
+    int num =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 l.setBackgroundColor(Color.RED);
                 break;
             case R.id.rotation1:
-                food.setRotation(30);
+                num++;
+                food.setRotation(num *30);
                 break;
             case R.id.expand1:
                 food.setScaleX(2);
