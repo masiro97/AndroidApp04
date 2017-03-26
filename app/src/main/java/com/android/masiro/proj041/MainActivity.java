@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                num=0;
                 l.setBackgroundColor(Color.WHITE);
                 food.setRotation(0);
                 food.setScaleX(1);
